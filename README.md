@@ -15,13 +15,17 @@ A simple API to manage notes, developed after completing the "Beginner Back-End 
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/your-repository-name.git
+   git clone https://github.com/Zandiaffandi236/notes-app-backend.git
    ```
-2. Install dependencies:
+2. Go to working directory:
+   ```bash
+   cd notes-app-backend
+   ```
+4. Install dependencies:
    ```bash
    npm install
    ```
-3. Run the development server:
+5. Run the development server:
    ```bash
    npm run start:dev
    ```
@@ -38,10 +42,6 @@ A simple API to manage notes, developed after completing the "Beginner Back-End 
 - Node.js
 - Hapi
 - ESLint
-
-## License
-
-This project does not have a license.
 
 ## Contact
 
