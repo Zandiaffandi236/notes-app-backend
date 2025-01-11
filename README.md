@@ -26,10 +26,27 @@ Notes App API/
     └── notes.js               # Stores notes data in an array
 ```
 
+## File Structure
+
+The project structure is organized as follows:
+
+```
+Notes App API/
+├── package.json               # Project dependencies
+├── package-lock.json          # Dependency lock file
+├── eslint.config.mjs          # ESLint configuration for code style enforcement
+└── src/
+    ├── server.js              # Initializes and configures the Hapi server
+    ├── routes.js              # Declares available routes
+    ├── handler.js             # Defines route handlers
+    └── notes.js               # Stores notes data in an array
+```
+
 ## Installation
 
 1. Clone this repository:
    ```bash
+   git clone https://github.com/Zandiaffandi236/notes-app-backend.git
    git clone https://github.com/Zandiaffandi236/notes-app-backend.git
    ```
 2. Go to working directory:
