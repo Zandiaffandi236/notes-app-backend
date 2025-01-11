@@ -2,3 +2,5 @@ node_modules
 notes-apl-webserver.pem
 mytoken.txt
 .gitignore
+notes-api-test.postman_collection.json
+notes-api-test.postman_enviroment.json
