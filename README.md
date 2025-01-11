@@ -1,4 +1,3 @@
-
 # Notes App API
 
 A simple API to manage notes, developed after completing the "Beginner Back-End with JavaScript" course from Dicoding Indonesia. This application aims to build an API that can be consumed by a frontend and provides basic CRUD operations for note management.
@@ -11,17 +10,38 @@ A simple API to manage notes, developed after completing the "Beginner Back-End 
 - **Delete**: Remove notes.
 - **Error Handling**: Handles errors and invalid requests gracefully.
 
+## File Structure
+
+The project structure is organized as follows:
+
+```
+Notes App API/
+├── package.json               # Project dependencies
+├── package-lock.json          # Dependency lock file
+├── eslint.config.mjs          # ESLint configuration for code style enforcement
+└── src/
+    ├── server.js              # Initializes and configures the Hapi server
+    ├── routes.js              # Declares available routes
+    ├── handler.js             # Defines route handlers
+    └── notes.js               # Stores notes data in an array
+```
+
 ## Installation
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/your-repository-name.git
+   git clone https://github.com/Zandiaffandi236/notes-app-backend.git
    ```
-2. Install dependencies:
+2. Go to working directory:
+   ```bash
+   cd notes-app-backend
+   ```
+3. Install dependencies:
    ```bash
    npm install
    ```
-3. Run the development server:
+4. Run the development server:
+
    ```bash
    npm run start:dev
    ```
@@ -38,10 +58,6 @@ A simple API to manage notes, developed after completing the "Beginner Back-End 
 - Node.js
 - Hapi
 - ESLint
-
-## License
-
-This project does not have a license.
 
 ## Contact
 
