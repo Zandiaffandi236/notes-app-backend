@@ -1,6 +1,7 @@
 const InvariantError = require('../exceptions/InvariantError');
 const { NotePayloadSchema } = require('./notes/schema');
 const { UserPayloadSchema } = require('./users/schema');
+const { PostAuthenticationPayloadSchema, PutAuthenticationPayloadSchema, DeleteAuthenticationPayloadSchema } = require('./authentications/schema');
 
 const NoteValidator = {
   validateNotePayload: (payload) => {
@@ -20,4 +21,25 @@ const UserValidator = {
   }
 };
 
-module.exports = { NoteValidator, UserValidator };
+const AuthenticationValidator = {
+  validatePostAuthenticationPayload: (payload) => {
+    const validationResult = PostAuthenticationPayloadSchema.validate(payload);
+    if (validationResult.error) {
+      throw new InvariantError(validationResult.error.message);
+    }
+  },
+  validatePutAuthenticationPayload: (payload) => {
+    const validationResult = PutAuthenticationPayloadSchema.validate(payload);
+    if (validationResult.error) {
+      throw new InvariantError(validationResult.error.message);
+    }
+  },
+  validateDeleteAuthenticationPayload: (payload) => {
+    const validationResult = DeleteAuthenticationPayloadSchema.validate(payload);
+    if (validationResult.error) {
+      throw new InvariantError(validationResult.error.message);
+    }
+  }
+};
+
+module.exports = { NoteValidator, UserValidator, AuthenticationValidator };
