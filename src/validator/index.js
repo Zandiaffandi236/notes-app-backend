@@ -3,6 +3,7 @@ const { NotePayloadSchema } = require('./notes/schema');
 const { UserPayloadSchema } = require('./users/schema');
 const { PostAuthenticationPayloadSchema, PutAuthenticationPayloadSchema, DeleteAuthenticationPayloadSchema } = require('./authentications/schema');
 const { collaborationPayloadSchema } = require('./collaborations/schema');
+const { ExportNotesPayloadSchema } = require('./exports/schema');
 
 const NoteValidator = {
   validateNotePayload: (payload) => {
@@ -52,4 +53,13 @@ const CollaborationValidator = {
   }
 };
 
-module.exports = { NoteValidator, UserValidator, AuthenticationValidator, CollaborationValidator };
+const ExportNoteValidator = {
+  validateExportNotesPayload: (payload) => {
+    const validationResult = ExportNotesPayloadSchema.validate(payload);
+    if (validationResult.error) {
+      throw new InvariantError(validationResult.error.message);
+    }
+  }
+};
+
+module.exports = { NoteValidator, UserValidator, AuthenticationValidator, CollaborationValidator, ExportNoteValidator };
