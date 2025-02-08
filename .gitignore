@@ -3,6 +3,7 @@ notes-apl-webserver.pem
 mytoken.txt
 .env
 .prod.env
+src/api/uploads/file
 .gitignore
 notes-api-test.postman_collection.json
 notes-api-test.postman_enviroment.json
