@@ -15,14 +15,16 @@ const AuthenticationsService = require('./services/postgres/AuthenticationsServi
 const CollaborationsService = require('./services/postgres/CollaborationService');
 const ProducerService = require('./services/rabbitmq/ProducerService');
 const StorageService = require('./services/S3/StorageService');
+const CacheSerivice = require('./services/redis/CacheService');
 const TokenManager = require('./tokenize/TokenManager');
 const { NoteValidator, UserValidator, AuthenticationValidator, CollaborationValidator, ExportNoteValidator, UploadValidator } = require('./validator');
 
 const ClientError = require('./exceptions/ClientError');
 
 const init = async () => {
-  const collaborationsService = new CollaborationsService();
-  const notesService = new NotesService(collaborationsService);
+  const cacheService = new CacheSerivice();
+  const collaborationsService = new CollaborationsService(cacheService);
+  const notesService = new NotesService(collaborationsService, cacheService);
   const usersService = new UsersService();
   const authenticationsService = new AuthenticationsService();
   const storageService = new StorageService();
